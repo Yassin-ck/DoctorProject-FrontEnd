@@ -2,6 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
+
+
  
 const HomePage = () => {
   const { user, authToken,logoutUser} = useContext(AuthContext);

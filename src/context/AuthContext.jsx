@@ -45,11 +45,9 @@ export const AuthProvider = ({ children }) => {
       setUser(decodedToken);
       SetAuthToken(data);
       localStorage.setItem("authtokens", JSON.stringify(data));
-      decodedToken.is_admin
-        ? navigate("/adminhome")
-        : decodedToken.is_doctor
-        ? navigate("/home")
-        : navigate("/userhome");
+   
+        navigate("/")
+
     } else {
       alert("somwthing Went Wrong");
     }

@@ -61,7 +61,10 @@ const {user,logoutUser} = useContext(AuthContext)
                   <li style={{marginBottom:"10px"}}>Strengthen your online reputation with verified reviews
                   </li>
                 </ul>
-                <Button size='large' variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Availiable Now</Button>
+                {user && user.is_doctor?<Button size='large' onClick={()=>navigate('/home')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Check Your Profile</Button>:
+                user && user.is_admin?<Button size='large' onClick={()=>navigate('/home')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Administration</Button>:
+                user && !user.is_admin&!user.is_doctor?<Button size='large' onClick={()=>navigate('/userhome')} variant='contained' style={{margin:'30px'}} color='primary' startIcon   >Availiable Doctors</Button>:
+                <Button size='large' variant='contained' style={{margin:'30px'}} color='primary' startIcon   >Availiable Now</Button>}
 
             </div>
         

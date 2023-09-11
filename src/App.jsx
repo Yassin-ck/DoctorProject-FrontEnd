@@ -1,8 +1,7 @@
 
-import { Route,Routes } from 'react-router-dom'
+import { Link, Route,Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
-import Header from './components/Header'
 import { AuthProvider } from './context/AuthContext'
 import PrivateRouter from './utils/PrivateRouter'
 import RegistrationPage from './pages/RegistrationPage'
@@ -15,20 +14,21 @@ import { AppBar,Toolbar,Typography} from '@material-ui/core'
 import { AddCircle } from '@material-ui/icons'
 import useStyles from './pages/styles'
 
+
 const App = () => {
 const classes = useStyles()
 
 return (
     <>   
     <AuthProvider>
-    <Header/>
     <AppBar position='relative'>
     <Toolbar>
     <AddCircle className={classes.icons} />
+    <Typography variant='h6'>Doctor</Typography>
     <Typography variant='h6'>
-      Doctor 
+      <Link  to="/" style={{ color: "white" ,fontWeight:"bolder",fontSize:"17px" ,textDecoration:"none",paddingLeft:'15px' }}>Home</Link>
       </Typography>
-    </Toolbar>
+      </Toolbar>
   </AppBar>
     <Routes>
     <Route path='/' element={ < BasePage />}/>
