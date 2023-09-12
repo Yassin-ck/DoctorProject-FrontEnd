@@ -40,42 +40,113 @@ RegistrationContainer:{
     transition:'box-shadow .4s ease',
     "&:hover":{
         boxShadow: '0px 8px 12px rgba(0, 0, 0, 0.2)'
-    }
-    
-},
-EditProfileContainer:{
-    marginTop:"50px",
-    marginBottom:"50px",
-    backgroundColor:theme.palette.background.paper,
-    padding:"50px"
-},
-userHomeContainer: {
-    marginTop: "50px",
-    [theme.breakpoints.up('md')]: {
-      marginLeft: '180px',
+      }
+      
+    },
+    EditProfileContainer:{
+      marginTop:"50px",
+      marginBottom:"50px",
+      backgroundColor:theme.palette.background.paper,
+      padding:"50px"
+    },
+  //   userHomeContainer: {
+  //     marginTop: "50px",
+  //     [theme.breakpoints.up('md')]: {
+  //       marginLeft: '180px',
+  //     },
+  //   },
+  //   userHomecard: {
+  //     height: "100%",
+  //     width: '300px',
+  //   },
+  // CardMediaImage: {
+  //   paddingTop: "56.25%",
+  // },
+  // userHomecardContent: {
+  //   flexGrow: 1,
+  // },
+
+  userHomeContainer: {
+    marginTop: theme.spacing(2),
+    marginLeft:"200px"
+  },
+  rootGridUserHome: {
+    flexWrap: 'wrap',
+    '& > *': {
+      margin: theme.spacing(1),
     },
   },
   userHomecard: {
-    height: "100%",
-    width: '300px',
-  },
-  CardMediaImage: {
-    paddingTop: "56.25%",
-  },
-  userHomecardContent: {
-    flexGrow: 1,
-  },
-  rootGridUserHome: {
-    display: "grid",
-    gridTemplateColumns: "repeat(1, 1fr)", 
-    gap: "20px",
-    [theme.breakpoints.up('sm')]: {
-      gridTemplateColumns: "repeat(2, 1fr)", 
+    width: '500px', // Adjust the card width as needed
+    margin: theme.spacing(1),
+    boxShadow:"2px 2px 5px rgba(0,0,.1)",
+    transition: 'transform 0.3s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
     },
-    [theme.breakpoints.up('md')]: {
-      gridTemplateColumns: "repeat(3, 1fr)",
-      maxWidth: "none", 
-  }}
-}));
+  },
+  
+  // rootGridUserHome: {
+  //   display: "grid",
+  //   gridTemplateColumns: "repeat(1, 1fr)", 
+  //   gap: "20px",
+  //   [theme.breakpoints.up('sm')]: {
+  //     gridTemplateColumns: "repeat(2, 1fr)", 
+  //   },
+  //   [theme.breakpoints.up('md')]: {
+  //     gridTemplateColumns: "repeat(3, 1fr)",
+  //     maxWidth: "none", 
+  //   }},
+    ProfileContainer:{
+      marginTop:"30px",
+      backgroundColor:"lightgrey",
+      boxShadow: '2px 2px 5px rgba(0,  0, 0.2)',
+      transition:'box-shadow .4s ease',
+      "&:hover":{
+          boxShadow: '2px 2px 0px rgba(0,  0, 0.2)',
+          borderRadius:"5px"
+        }
+        
+      },
+      BlockContainer:{
+      marginTop:"30px",
+      backgroundColor:"lightgrey",
+      boxShadow: '2px 2px 5px rgba(0,  0, 0.2)',
+      
 
-export default useStyles
+    },
+    toolbar :{
+      display: 'flex',
+      justifyContent: "space-between",
+    },
+    
+    searchInput: {
+      flex: 1,
+      display: 'flex',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+    },
+    searchInputBar:{
+      width:"300px",
+      padding:'13px',
+      border:'1px solid blue',
+      borderRadius:"4px 4px",
+      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+      transition:'all 0.3s ease',
+      "&:hover":{
+        backgroundColor:"#f5f5f5",
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        outline:'none'
+      },
+      "&:focus":{
+        backgroundColor:"#fff",
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+        outline:"none"
+
+      }
+    },
+    
+    
+  }));
+  
+  export default useStyles

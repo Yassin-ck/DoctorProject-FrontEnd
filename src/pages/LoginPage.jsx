@@ -57,7 +57,7 @@ const {UserLogin} = useContext(AuthContext)
                 
                 <FormControlLabel
                   control={<Checkbox value="remember" color="primary"  />}
-                  label="Remeber me"
+                  label="Remember me"
                 />
                 <div style={{height:'25px'}}></div>
                 <Button
@@ -72,7 +72,7 @@ const {UserLogin} = useContext(AuthContext)
               <Grid container style={{marginTop:"10px"}} >
                 <Grid item>
                   <Typography variant="overline" gutterBottom>
-                    Don't you have an Account ? <Link to="/register"> SignIn</Link>
+                    Don't you have an Account ? <Link to="/register"> SignUp</Link>
                   </Typography>
                 </Grid>
               </Grid>

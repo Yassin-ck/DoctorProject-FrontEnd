@@ -7,7 +7,7 @@ import { AuthContext } from '../context/AuthContext'
 
 const BasePage = () => {
 
-const {user,logoutUser} = useContext(AuthContext)
+const {user,logoutUserTrigerrer,loginTrigger} = useContext(AuthContext)
 
   const classes = useStyles()
   const navigate = useNavigate()
@@ -28,10 +28,13 @@ const {user,logoutUser} = useContext(AuthContext)
               <Grid container spacing={2} justifyContent='center'>
                 <Grid item >
                  {!user? <Button onClick={()=>navigate('/login')} variant='contained' color='primary'>SignIn</Button>:
-                  <Button onClick={()=>logoutUser()} variant='contained' color='primary' >Logout</Button>}
+                 user&&user.is_doctor?  <Button variant='contained' color='primary'>Booking</Button>:                 
+                 <Button onClick={()=>navigate('/home')} variant='contained' color='primary'>Profile</Button>}
                 </Grid>
                 <Grid item >
-                  <Button onClick={()=>navigate('/register')} variant='outlined' color='primary'>SignUp</Button>
+                {!user?
+                  <Button onClick={()=>navigate('/register')} variant='outlined' color='primary'>SignUp</Button>:
+                  <Button onClick={()=>logoutUserTrigerrer()} variant='outlined' color='primary' >Logout</Button>}
                 </Grid>
               </Grid>
             </div>
@@ -62,9 +65,9 @@ const {user,logoutUser} = useContext(AuthContext)
                   </li>
                 </ul>
                 {user && user.is_doctor?<Button size='large' onClick={()=>navigate('/home')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Check Your Profile</Button>:
-                user && user.is_admin?<Button size='large' onClick={()=>navigate('/home')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Administration</Button>:
+                user && user.is_admin?<Button size='large' onClick={()=>navigate('/adminhome')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Administration</Button>:
                 user && !user.is_admin&!user.is_doctor?<Button size='large' onClick={()=>navigate('/userhome')} variant='contained' style={{margin:'30px'}} color='primary' startIcon   >Availiable Doctors</Button>:
-                <Button size='large' variant='contained' style={{margin:'30px'}} color='primary' startIcon   >Availiable Now</Button>}
+                <Button size='large' variant='contained' onClick={loginTrigger} style={{margin:'30px'}} color='primary' startIcon   >Unavailable Now</Button>}
 
             </div>
         
@@ -75,6 +78,7 @@ const {user,logoutUser} = useContext(AuthContext)
         </div>
         
         </main>
+
         <footer className={classes.Footer}>
           <Typography variant='h6' align='center' color='primary' gutterBottom> Footer</Typography>
           <Typography variant='subtitle1' align='center' color='textSecondary'>

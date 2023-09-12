@@ -1,5 +1,5 @@
 
-import { Link, Route,Routes } from 'react-router-dom'
+import { Route,Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LoginPage from './pages/LoginPage'
 import { AuthProvider } from './context/AuthContext'
@@ -10,26 +10,15 @@ import AdminHomePage from './pages/AdminHomePage'
 import AdminBlock from './pages/AdminBlock'
 import UserHomePage from './pages/UserHomePage'
 import BasePage from './pages/basePage'
-import { AppBar,Toolbar,Typography} from '@material-ui/core'
-import { AddCircle } from '@material-ui/icons'
-import useStyles from './pages/styles'
-
+import Header from './components/Header'
 
 const App = () => {
-const classes = useStyles()
 
 return (
     <>   
-    <AuthProvider>
-    <AppBar position='relative'>
-    <Toolbar>
-    <AddCircle className={classes.icons} />
-    <Typography variant='h6'>Doctor</Typography>
-    <Typography variant='h6'>
-      <Link  to="/" style={{ color: "white" ,fontWeight:"bolder",fontSize:"17px" ,textDecoration:"none",paddingLeft:'15px' }}>Home</Link>
-      </Typography>
-      </Toolbar>
-  </AppBar>
+    <AuthProvider> 
+    <Header />
+  
     <Routes>
     <Route path='/' element={ < BasePage />}/>
     <Route path='/home' element={<PrivateRouter><HomePage/></PrivateRouter> }/>

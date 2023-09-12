@@ -120,12 +120,29 @@ export const AuthProvider = ({ children }) => {
     return () => clearInterval(interval);
   }, [authToken, loading]);
 
+  const logoutUserTrigerrer = ()=>{
+    const confirm = window.confirm('Are you sure You want to Logout ?')
+    if (confirm)
+   {logoutUser() }else{
+    null
+  }
+  }
+  const loginTrigger=()=>{
+    const confirm = window.confirm('You Have to Login to Continue !!!')
+    if (confirm){
+      navigate('/login')
+    }else{
+      null
+    }
+  }
+
   const logoutUser = () => {
-    setUser(null);
+     setUser(null);
     SetAuthToken(null);
     localStorage.removeItem("authtokens");
     localStorage.removeItem("data");
     navigate('/')
+   
   };
 
   const state = {
@@ -136,7 +153,9 @@ export const AuthProvider = ({ children }) => {
     setUser: setUser,
     setLoading:setLoading,
     DoctorView:DoctorView,
-    doctorview:doctorview
+    doctorview:doctorview,
+    logoutUserTrigerrer:logoutUserTrigerrer,
+    loginTrigger:loginTrigger
   };
 
   return <AuthContext.Provider value={state}>
