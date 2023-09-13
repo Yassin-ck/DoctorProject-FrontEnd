@@ -34,14 +34,16 @@ const AdminHomePage = () => {
               
             }
         
-    }
+    } 
+
+
 
     useEffect(() => {
         AdminHome();
 
     }, []);
 
-
+console.log(patience);
     return (
         <>
         <CssBaseline />
@@ -50,22 +52,22 @@ const AdminHomePage = () => {
           <h2>Doctors</h2>
           {patience.map((item) => (
             
-            <div key={item.id} className="user-card">
-              <h3>{item.username.toUpperCase()}</h3>
+            <div key={item.id} className="user-card" style={!item.is_active?{backgroundColor:"rgba(208,75,75,0.2)" ,borderRadius:"1px",boxShadow:'1px 1px 5px rgba(0,0,.1)'}:{backgroundColor:"#daecfb"}}>
+              <h3>Dr.{item.username.toUpperCase()}</h3>
               <h4>{item.email}</h4>
               {/* Add other user details here */}
-              <button onClick={()=>navigate(`/adminhome/${item.id}`)}>View</button>
+              <button  style={!item.is_active?{ borderRadius:"1px",backgroundColor:'#ba704f'}:null}  onClick={()=>navigate(`/adminhome/${item.id}`)}>View</button>
             </div>
           ))}
         </div>
         <div className="doctor-list">
           <h2>Users</h2>
           {doctors.map((doctor) => (
-            <div key={doctor.id} className="doctor-card">
-              <h3>{doctor.username}</h3>
+            <div key={doctor.id}  style={!doctor.is_active?{backgroundColor:"rgba(208,75,75,0.2)"}:{backgroundColor:"#daecfb"}} className="doctor-card">
+              <h3>{doctor.username.toUpperCase()}</h3>
               <h4>{doctor.email}</h4>
               {/* Add other doctor details here */}
-              <button onClick={()=>navigate(`/adminhome/${doctor.id}`)}>View</button>
+              <button   onClick={()=>navigate(`/adminhome/${doctor.id}`)}>View</button>
             </div>
           ))}
         </div>
@@ -76,3 +78,7 @@ const AdminHomePage = () => {
 }
 
 export default AdminHomePage
+
+
+
+// rgba(208,75,75,0.2)

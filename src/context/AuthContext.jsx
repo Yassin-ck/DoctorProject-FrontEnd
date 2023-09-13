@@ -127,6 +127,10 @@ export const AuthProvider = ({ children }) => {
     null
   }
   }
+
+
+
+
   const loginTrigger=()=>{
     const confirm = window.confirm('You Have to Login to Continue !!!')
     if (confirm){
