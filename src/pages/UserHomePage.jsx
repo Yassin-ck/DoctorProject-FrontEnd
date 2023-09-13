@@ -18,10 +18,10 @@ useEffect(() => {
       <CssBaseline />
       <Grid container spacing={2} className={classes.rootGridUserHome}>
         {doctorview.length === 0 ? (
-          <p>No Doctors Available</p>
+          <Typography variant='overline'>No Doctors Available !!!</Typography>
         ) : (
           doctorview.map((item) => (
-            <Grid item key={item.id}>
+            <Grid item key={item.id} >
               <Card className={classes.userHomecard}>
                 <CardContent className={classes.userHomecardContent}>
                   <Typography gutterBottom align='left'  color='primary' variant='h4'>

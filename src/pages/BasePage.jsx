@@ -67,7 +67,7 @@ const {user,logoutUserTrigerrer,loginTrigger} = useContext(AuthContext)
                 {user && user.is_doctor?<Button size='large' onClick={()=>navigate('/home')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Check Your Profile</Button>:
                 user && user.is_admin?<Button size='large' onClick={()=>navigate('/adminhome')} variant='contained' style={{margin:'30px'}} color='primary' startIcon  >Administration</Button>:
                 user && !user.is_admin&!user.is_doctor?<Button size='large' onClick={()=>navigate('/userhome')} variant='contained' style={{margin:'30px'}} color='primary' startIcon   >Availiable Doctors</Button>:
-                <Button size='large' variant='contained' onClick={loginTrigger} style={{margin:'30px'}} color='primary' startIcon   >Unavailable Now</Button>}
+                <Button size='large' variant='contained' onClick={loginTrigger} style={{margin:'30px'}} color='primary' startIcon >Availiable Now</Button>}
 
             </div>
         

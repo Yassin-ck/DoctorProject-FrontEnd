@@ -17,7 +17,7 @@ const ProfileEdit = () => {
           const response = await axios(`${import.meta.env.VITE_SERVER_URL}profile/`,{
               method:'PATCH',
               headers:{
-                  'Content-Type':'application/json',
+                  'Content-Type':'multipart/form-data',
                   'Authorization':`Bearer ${authToken.access}`
               },
               data: {
@@ -143,6 +143,7 @@ const ProfileEdit = () => {
                 fullWidth
                 variant="contained"
                 color="primary"
+                 style={{backgroundColor:""}}
                 
               > Submit
                 </Button>

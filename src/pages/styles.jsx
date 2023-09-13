@@ -47,7 +47,17 @@ RegistrationContainer:{
       marginTop:"50px",
       marginBottom:"50px",
       backgroundColor:theme.palette.background.paper,
-      padding:"50px"
+      padding:"50px",
+      "&:hover":{
+        
+        backgroundColor:'ivory',
+        borderRadius:"5px",
+        boxShadow:"20px 20px 20px rgba(0,0,0,.1)",
+        transition:"box-shadow .5s ease",
+        transition: 'transform 0.3s ease-in-out',
+        transform: 'scale(1.02)',
+
+      }
     },
   //   userHomeContainer: {
   //     marginTop: "50px",
@@ -81,8 +91,13 @@ RegistrationContainer:{
     margin: theme.spacing(1),
     boxShadow:"2px 2px 5px rgba(0,0,.1)",
     transition: 'transform 0.3s ease-in-out',
+    position:"relative",
     '&:hover': {
-      transform: 'scale(1.05)',
+      transform: 'scale(1.01)',
+      boxShadow:"4px 4px 5px rgba(0,0,.1)",
+      transition: 'box-shadow 0.3s ease',
+      
+
     },
   },
   
@@ -125,6 +140,7 @@ RegistrationContainer:{
       display: 'flex',
       justifyContent: 'flex-end',
       alignItems: 'center',
+      
     },
     searchInputBar:{
       width:"300px",
@@ -133,10 +149,13 @@ RegistrationContainer:{
       borderRadius:"4px 4px",
       boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
       transition:'all 0.3s ease',
+      backgroundColor:"ivory",
       "&:hover":{
         backgroundColor:"#f5f5f5",
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-        outline:'none'
+        outline:'none',
+        backgroundColor:"white",
+
       },
       "&:focus":{
         backgroundColor:"#fff",
